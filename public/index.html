@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fares Mohammed | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Libre Baskerville (EN Name), Aref Ruqaa (AR Name) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Fira Sans Condensed (EN Body), Markazi Text (AR Body) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;700&family=Markazi+Text:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="dark-mode">
+    <div id="debug-log"
+        style="position:fixed; bottom:0; left:0; width:100%; max-height:100px; overflow:auto; background:rgba(0,0,0,0.8); color:#0f0; font-family:monospace; font-size:12px; z-index:10000; pointer-events:none;">
+    </div>
+    <script>
+        window.onerror = function (msg, url, line) {
+            const div = document.getElementById('debug-log');
+            div.innerHTML += `<div>ERROR: ${msg} at ${line}</div>`;
+            return false;
+        };
+        console.log = function (msg) {
+            const div = document.getElementById('debug-log');
+            if (div) div.innerHTML += `<div>LOG: ${msg}</div>`;
+        };
+        document.body.classList.add('js-enabled');
+    </script>
+    <div id="custom-cursor"></div>
+    <div id="cursor-blur"></div>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <div id="app">
+        <nav id="navbar">
+            <div class="nav-container">
+                <div class="logo-container">
+                    <div class="logo">FM</div>
+                </div>
+                <div class="nav-content">
+                    <div class="nav-links">
+                        <a href="#hero" class="nav-item active" data-en="Home" data-ar="الرئيسية">Home</a>
+                        <a href="#snapshot" class="nav-item" data-en="About" data-ar="عني">About</a>
+                        <a href="#experience" class="nav-item" data-en="Journey" data-ar="الرحلة">Journey</a>
+                        <a href="#projects" class="nav-item" data-en="Projects" data-ar="المشاريع">Projects</a>
+                        <a href="#skills" class="nav-item" data-en="Skills" data-ar="المهارات">Skills</a>
+                        <a href="#contact" class="nav-item" data-en="Contact" data-ar="تواصل">Contact</a>
+                    </div>
+                </div>
+                <div class="nav-controls">
+                    <button id="lang-toggle" class="control-btn" aria-label="Switch Language">
+                        <span id="lang-text">AR</span>
+                    </button>
+                    <button id="theme-toggle" class="control-btn" aria-label="Toggle Theme">
+                        <span class="theme-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <section id="hero" class="section reveal hero-section">
+                <div class="hero-container">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-frame">
+                            <img src="/Fares.jpeg" alt="Fares Mohammed" id="hero-img">
+                        </div>
+                        <div class="hero-image-blob"></div>
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-names">
+                            <h1 class="en-name" data-en="Fares Mohammed" data-ar="فارس محمد">Fares Mohammed</h1>
+                        </div>
+                        <p class="tagline" data-en="Computer Science Student | Junior Software Developer"
+                            data-ar="طالب علوم حاسب | مطور برمجيات جونيور">Computer Science Student | Junior Software
+                            Developer</p>
+                        <p class="hero-sentence"
+                            data-en="Passionate about building efficient, scalable software and solving complex problems with elegant code."
+                            data-ar="شغوف ببناء برمجيات فعالة وقابلة للتوسع وحل المشكلات المعقدة بكود أنيق.">Passionate
+                            about building efficient, scalable software and solving complex problems with elegant code.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="#projects" class="btn btn-primary" data-en="View Work" data-ar="شاهد أعمالي">View
+                                Work</a>
+                            <a href="#contact" class="btn btn-secondary" data-en="Contact"
+                                data-ar="تواصل معي">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="snapshot" class="section reveal">
+                <h2 class="section-title" data-en="Engineering Snapshot" data-ar="نظرة برمجية">Engineering Snapshot</h2>
+                <div class="snapshot-content">
+                    <p data-en="I focus on logic and structured thinking. Whether it's architecting a backend or refining a user experience, my goal is always to create robust, maintainable, and user-centric solutions. I thrive on challenges and continuous learning."
+                        data-ar="أركز على المنطق والتفكير المنظم. سواء كان ذلك في هيكلة الواجهة الخلفية أو تحسين تجربة المستخدم، فحلمي دائمًا هو إنشاء حلول قوية وقابلة للصيانة وتتمحور حول المستخدم. أنا أزدهر بالتحديات والتعلم المستمر.">
+                        I focus on logic and structured thinking. Whether it's architecting a backend or refining a user
+                        experience, my goal is always to create robust, maintainable, and user-centric solutions. I
+                        thrive on challenges and continuous learning.</p>
+                </div>
+            </section>
+
+            <section id="experience" class="section reveal">
+                <h2 class="section-title" data-en="Experience Timeline" data-ar="جدول الخبرات">Experience Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Role / Company</h3>
+                            <span class="timeline-date">Date Span</span>
+                            <p>Short description of your responsibilities, key achievements, and the impact you made
+                                during your time here.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Another Role / Project</h3>
+                            <span class="timeline-date">Date Span</span>
+                            <p>Describing another milestone in your journey. Focus on technical growth and specific
+                                tools used.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section reveal">
+                <h2 class="section-title" data-en="Selected Projects" data-ar="مشاريع مختارة">Selected Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Project Name</h3>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <p><strong>Problem:</strong> A concise description of the challenge or gap this project
+                                aimed to address.</p>
+                            <p><strong>Solution:</strong> How you solved it using your technical skills and
+                                architectural decisions.</p>
+                            <p><strong>What I Learned:</strong> Key takeaways, from technical hurdles to soft skills.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Another Project</h3>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>FastAPI</span>
+                            </div>
+                            <p><strong>Problem:</strong> Describing the problem statement for another significant piece
+                                of work.</p>
+                            <p><strong>Solution:</strong> The implementation details and why you chose this specific
+                                approach.</p>
+                            <p><strong>What I Learned:</strong> Reflecting on the process and the end result.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section reveal">
+                <h2 class="section-title" data-en="Skills" data-ar="المهارات">Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Core Foundations</h3>
+                        <div class="skill-badges">
+                            <span>Data Structures</span>
+                            <span>Algorithms</span>
+                            <span>System Design</span>
+                            <span>OOP</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development</h3>
+                        <div class="skill-badges">
+                            <span>JavaScript (ES6+)</span>
+                            <span>React.js</span>
+                            <span>Node.js</span>
+                            <span>SQL / NoSQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Thinking & Style</h3>
+                        <div class="skill-badges">
+                            <span>Problem Solving</span>
+                            <span>Agile Workflow</span>
+                            <span>Technical Writing</span>
+                            <span>Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-i-work" class="section reveal">
+                <h2 class="section-title" data-en="How I Work" data-ar="كيف أعمل">How I Work</h2>
+                <ul class="workflow-list">
+                    <li><strong>Continuous Learning:</strong> Staying updated with the latest industry trends and best
+                        practices.</li>
+                    <li><strong>Problem Decomposition:</strong> Breaking down complex challenges into manageable,
+                        logical parts.</li>
+                    <li><strong>Clean Code:</strong> Prioritizing readability, maintainability, and scalability in every
+                        line.</li>
+                    <li><strong>Collaboration:</strong> Actively communicating and syncing with team members for optimal
+                        results.</li>
+                    <li><strong>User-Centric focus:</strong> Always keeping the end-user's experience at the forefront
+                        of development.</li>
+                </ul>
+            </section>
+
+            <section id="leadership" class="section reveal">
+                <h2 class="section-title" data-en="Leadership & Activities" data-ar="القيادة والأنشطة">Leadership &
+                    Activities</h2>
+                <div class="activities-grid">
+                    <div class="activity-item">
+                        <h3>Team Lead - Student Project</h3>
+                        <p>Managed a team of 5 developers to deliver a full-stack solution. Focused on task allocation
+                            and code reviews.</p>
+                    </div>
+                    <div class="activity-item">
+                        <h3>Student Ambassador</h3>
+                        <p>Represented the department in university events, mentoring new students and organizing tech
+                            workshops.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section reveal">
+                <h2 class="section-title" data-en="Education" data-ar="التعليم">Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor of Computer Science</h3>
+                    <p>University Name | Expected Graduation: 202X</p>
+                    <p>Focus: Software Engineering, Artificial Intelligence, and Database Management.</p>
+                </div>
+            </section>
+
+            <section id="languages" class="section reveal">
+                <h2 class="section-title" data-en="Languages" data-ar="اللغات">Languages</h2>
+                <div class="languages-flex">
+                    <div class="language-card">
+                        <h3>Arabic</h3>
+                        <p>Native / Bilingual Proficiency</p>
+                    </div>
+                    <div class="language-card">
+                        <h3>English</h3>
+                        <p>Professional Working Proficiency</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="beyond-code" class="section reveal">
+                <h2 class="section-title" data-en="Beyond Code" data-ar="خلف الكود">Beyond Code</h2>
+                <div class="human-touch">
+                    <p>When I'm not coding, I enjoy exploring new technologies, participating in chess tournaments, and
+                        contributing to open-source communities. I'm also passinate about technical writing and sharing
+                        knowledge with others.</p>
+                </div>
+            </section>
+
+            <section id="puzzle" class="section reveal puzzle-section">
+                <h2 class="section-title" data-en="Interactive Challenge" data-ar="تحدي تفاعلي">Interactive Challenge
+                </h2>
+                <p data-en="Relax and solve this 15-puzzle before we connect!"
+                    data-ar="استرخِ وحل لغز 15 هذا قبل أن نتواصل!">Relax and solve this 15-puzzle before we connect!</p>
+                <div id="puzzle-board" class="puzzle-container">
+                    <!-- Puzzle pieces will be generated by JS -->
+                </div>
+                <div id="puzzle-msg"></div>
+            </section>
+
+            <section id="testimonials" class="section reveal">
+                <h2 class="section-title" data-en="Testimonials" data-ar="التوصيات">Testimonials</h2>
+                <div class="testimonial-form-container">
+                    <form id="testimonial-form">
+                        <input type="text" id="test-name" placeholder="Your Name" data-en="Your Name" data-ar="اسمك"
+                            required>
+                        <input type="email" id="test-email" placeholder="Your Email" data-en="Your Email"
+                            data-ar="بريدك الإلكتروني" required>
+                        <textarea id="test-msg" placeholder="Your Feedback" data-en="Your Feedback" data-ar="رأيك"
+                            required></textarea>
+                        <button type="submit" class="btn btn-primary" data-en="Submit Feedback"
+                            data-ar="إرسال التقييم">Submit Feedback</button>
+                    </form>
+                </div>
+                <div id="testimonials-display" class="testimonials-list">
+                    <!-- Approved testimonials would go here -->
+                </div>
+            </section>
+
+            <section id="contact" class="section reveal">
+                <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+                <div class="contact-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Name" data-en="Name" data-ar="الاسم"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="Email" data-en="Email"
+                                data-ar="البريد الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-msg" placeholder="Your Message" data-en="Your Message"
+                                data-ar="رسالتك" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-en="Message Me" data-ar="أرسل رسالة">Message
+                            Me</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <p>&copy; 2024 Fares Mohammed. All rights reserved.</p>
+        </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
