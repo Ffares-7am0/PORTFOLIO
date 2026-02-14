@@ -1957,3 +1957,216 @@ textarea {
     transform: translateY(-3px);
     opacity: 1;
 }
+
+/* Mobile & Responsive Design */
+
+/* Menu Toggle Button - Hidden by default */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-nav-controls {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .section {
+        padding: 80px 30px;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-image-wrapper {
+        flex: 0 0 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar Mobile Styles */
+    .menu-toggle {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen right */
+        width: 75%;
+        height: 100vh;
+        background: rgba(4, 41, 64, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        border-radius: 0;
+        border: none;
+        border-left: 1px solid var(--accent-color);
+    }
+    
+    [dir="rtl"] .nav-links {
+        right: auto;
+        left: -100%;
+        transition: left 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        border-left: none;
+        border-right: 1px solid var(--accent-color);
+    }
+
+    .nav-links.mobile-open {
+        right: 0;
+    }
+    
+    [dir="rtl"] .nav-links.mobile-open {
+        left: 0;
+        right: auto;
+    }
+
+    .nav-item {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .mobile-nav-controls {
+        display: block;
+        margin-top: 20px;
+    }
+
+    /* Hero Section */
+    .hero-container {
+        flex-direction: column-reverse; /* Text on top, image on bottom for better flow or keep standard */
+        gap: 40px;
+        text-align: center;
+    }
+
+    /* Special Case for RTL Hero */
+    [dir="rtl"] .hero-container {
+        flex-direction: column-reverse;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+    
+    [dir="rtl"] .hero-content {
+        text-align: center;
+    }
+
+    .hero-image-wrapper {
+        flex: 0 0 280px;
+        width: 280px;
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-sentence {
+        margin: 0 auto 2.5rem;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* General Layout Adjustments */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .snapshot-card {
+        padding: 40px 25px;
+    }
+    
+    .snapshot-card p {
+        font-size: 1.2rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column */
+    }
+    
+    .project-card.featured {
+        flex-direction: column;
+    }
+    
+    .project-card.featured .project-image {
+        flex: none;
+        height: 250px;
+    }
+
+    /* Skills Grid */
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid-full {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for pills on mobile */
+    }
+
+    /* Workflow & Education */
+    .workflow-grid, .education-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    [dir="rtl"] .timeline {
+        padding-right: 20px;
+        padding-left: 0;
+    }
+    
+    .journey-slide-card {
+        flex: 0 0 85vw; /* Almost full width slider items */
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .skills-grid-full {
+        grid-template-columns: 1fr; /* Stack pills on very small screens */
+    }
+
+    .puzzle-tile {
+        width: 60px;
+        height: 60px;
+        font-size: 1.1rem;
+    }
+    
+    .puzzle-container {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(4, 60px);
+    }
+}
