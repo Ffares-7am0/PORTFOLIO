@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import { FaWhatsapp, FaTelegram, FaLinkedin, FaGithub, FaPhone, FaCheck } from 'react-icons/fa'
+import { FaWhatsapp, FaTelegram, FaLinkedin, FaGithub, FaPhone, FaCheck, FaBars, FaTimes } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { db } from './firebase'
 import { collection, addDoc, onSnapshot, query, orderBy, serverTimestamp, doc, updateDoc, increment, deleteDoc } from 'firebase/firestore'
@@ -462,6 +462,10 @@ const translations = {
 function App() {
     const [lang, setLang] = useState(localStorage.getItem('lang') || 'en')
     const [activeSection, setActiveSection] = useState('hero')
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+    const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+
 
     // Session tracking for feedback visibility
     const [sessionId] = useState(() => {
@@ -974,19 +978,30 @@ function App() {
                     >
                         FM
                     </div>
-                    <div className="nav-links">
+
+                    <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
                         {Object.entries(t.nav).map(([key, label]) => (
                             <a
                                 key={key}
                                 href={`#${key}`}
                                 className={`nav-item ${activeSection === key ? 'active' : ''}`}
-                                onClick={(e) => handleNavClick(e, key)}
+                                onClick={(e) => {
+                                    handleNavClick(e, key)
+                                    setIsMobileMenuOpen(false)
+                                }}
                             >
                                 {label}
                             </a>
                         ))}
+                        {/* Mobile Controls inside menu for easier access */}
+                        <div className="mobile-nav-controls">
+                            <button onClick={() => setLang(lang === 'en' ? 'ar' : 'en')} className="control-btn">
+                                {lang === 'en' ? 'AR' : 'EN'}
+                            </button>
+                        </div>
                     </div>
-                    <div className="nav-controls">
+
+                    <div className="nav-controls desktop-only">
                         {isAdmin && (
                             <button
                                 onClick={() => setIsAdmin(false)}
@@ -1005,6 +1020,10 @@ function App() {
                         <button onClick={() => setLang(lang === 'en' ? 'ar' : 'en')} className="control-btn">
                             {lang === 'en' ? 'AR' : 'EN'}
                         </button>
+                    </div>
+
+                    <div className="menu-toggle" onClick={toggleMenu}>
+                        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                     </div>
                 </div>
             </nav>
